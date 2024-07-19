@@ -10,6 +10,11 @@ _start:
   addi a1, a1, 1
   mul a0, a0, a1
   add sp, sp, a0
+  # on the F Extension (FS = 1)
+  csrr a0, mstatus
+  lui a1, 0x00002
+  or a0, a0, a1
+  csrw mstatus, a0
   # jump to the program main
   call main
 spin:
