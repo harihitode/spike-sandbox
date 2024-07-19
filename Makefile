@@ -21,8 +21,8 @@ ARFLAGS=rcs
 
 all: main
 
-main: main.o start.o
-	$(CC) $(LDFLAGS) main.o start.o -o $@
+main: start.o main.o
+	$(CC) $(LDFLAGS) start.o main.o -o $@
 
 clean:
 	rm -rf *.o main
